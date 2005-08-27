@@ -1,5 +1,3 @@
-# $Rev: 3386 $, $Date: 2005-08-27 17:42:47 $
-#
 Summary:	xf86dga application
 Summary(pl):	Aplikacja xf86dga
 Name:		xorg-app-xf86dga
@@ -17,10 +15,7 @@ BuildRequires:	xorg-lib-libXaw-devel
 BuildRequires:	xorg-lib-libXxf86dga-devel
 BuildRequires:	xorg-util-util-macros
 BuildRequires:	pkgconfig >= 0.19
-BuildRoot:	%{tmpdir}/xf86dga-%{version}-root-%(id -u -n)
-
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 xf86dga application.
@@ -28,11 +23,9 @@ xf86dga application.
 %description -l pl
 Aplikacja xf86dga.
 
-
 %prep
 %setup -q -n xf86dga-%{version}
 %patch0 -p1
-
 
 %build
 %{__aclocal}
@@ -43,17 +36,14 @@ Aplikacja xf86dga.
 
 %{__make}
 
-
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %files
 %defattr(644,root,root,755)

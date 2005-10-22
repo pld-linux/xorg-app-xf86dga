@@ -1,20 +1,19 @@
 Summary:	xf86dga application
 Summary(pl):	Aplikacja xf86dga
 Name:		xorg-app-xf86dga
-Version:	0.99.0
-Release:	0.02
+Version:	0.99.1
+Release:	0.1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/app/xf86dga-%{version}.tar.bz2
-# Source0-md5:	df8e8e055067a3b2ced2b80b0257a43e
-Patch0:		xf86dga-man.patch
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/app/xf86dga-%{version}.tar.bz2
+# Source0-md5:	c66dfe0e8247022d8dff634d7e96bf9b
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-lib-libXaw-devel
 BuildRequires:	xorg-lib-libXxf86dga-devel
-BuildRequires:	xorg-util-util-macros
+BuildRequires:	xorg-util-util-macros >= 0.99.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -25,7 +24,6 @@ Aplikacja xf86dga.
 
 %prep
 %setup -q -n xf86dga-%{version}
-%patch0 -p1
 
 %build
 %{__aclocal}
@@ -40,12 +38,14 @@ Aplikacja xf86dga.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	appmandir=%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc ChangeLog
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*.1*
+%{_mandir}/man1/*.1x*

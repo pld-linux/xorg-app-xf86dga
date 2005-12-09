@@ -1,19 +1,19 @@
 Summary:	xf86dga application
 Summary(pl):	Aplikacja xf86dga
 Name:		xorg-app-xf86dga
-Version:	0.99.2
+Version:	0.99.3
 Release:	0.1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC2/app/xf86dga-%{version}.tar.bz2
-# Source0-md5:	c801d076563e2d059dd2e17c8578cf8b
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xf86dga-%{version}.tar.bz2
+# Source0-md5:	233d5c219723dcda459290d4ac638347
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libXaw-devel
 BuildRequires:	xorg-lib-libXxf86dga-devel
-BuildRequires:	xorg-util-util-macros >= 0.99.1
+BuildRequires:	xorg-util-util-macros >= 0.99.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -38,8 +38,7 @@ Aplikacja xf86dga.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	appmandir=%{_mandir}/man1
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT

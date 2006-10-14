@@ -1,12 +1,12 @@
 Summary:	xf86dga application
 Summary(pl):	Aplikacja xf86dga
 Name:		xorg-app-xf86dga
-Version:	1.0.1
-Release:	0.1
+Version:	1.0.2
+Release:	1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/app/xf86dga-%{version}.tar.bz2
-# Source0-md5:	0ee496f720bc98fee43108c88bb7f398
+Source0:	http://xorg.freedesktop.org/releases/individual/app/xf86dga-%{version}.tar.bz2
+# Source0-md5:	66feef21fb4e769cc1e2f193ae461a8c
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake

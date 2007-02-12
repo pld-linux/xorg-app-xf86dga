@@ -1,5 +1,5 @@
 Summary:	xf86dga application
-Summary(pl.UTF-8):   Aplikacja xf86dga
+Summary(pl.UTF-8):	Aplikacja xf86dga
 Name:		xorg-app-xf86dga
 Version:	1.0.2
 Release:	1

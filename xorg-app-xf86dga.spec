@@ -2,7 +2,7 @@ Summary:	xf86dga application - a simple test client for the XFree86-DGA extensio
 Summary(pl.UTF-8):	Aplikacja xf86dga - prosty testowy klient rozszerzenia XFree86-DGA
 Name:		xorg-app-xf86dga
 Version:	1.0.3
-Release:	1
+Release:	2
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/app/xf86dga-%{version}.tar.bz2
@@ -49,4 +49,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc COPYING ChangeLog README
 %attr(755,root,root) %{_bindir}/dga
-%{_mandir}/man1/dga.1x*
+%{_mandir}/man1/dga.1*
